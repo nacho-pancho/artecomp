@@ -1,17 +1,17 @@
 
 <project>
 
+    <target name="clean">
+        <delete dir="classes"/>
+    </target>
+
     <path id="classpath">
         <fileset dir="lib" includes="**/*.jar"/>
     </path>
 
-        <target name="clean">
-        <delete dir="classes"/>
-    </target>
-
     <target name="compile">
         <mkdir dir="classes"/>
-        <javac srcdir="source" destdir="classes"/>
+        <javac srcdir="source" destdir="classes" classpathref="classpath"/>
     </target>
 
     <target name="jar" depends="compile">
@@ -24,7 +24,8 @@
     </target>
 
     <target name="run" depends="jar">
-        <java jar="jar/ArteComp.jar" classname="artecomp.ui.ArteComp" fork="true">
+        <java fork="true" classname="artecomp.ui.ArteComp">
+            <classpath>
                 <path refid="classpath"/>
                 <path location="jar/ArteComp.jar"/>
             </classpath>    
