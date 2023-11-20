@@ -1,0 +1,11 @@
+-Mas plasticidad: usar teclado en lugar de ventanitassssss
+-Desvincular previsualizacion en pantalla con salida real: escalar para que en pantalla siempre
+ se vea en res. fija, pero que el verdadero sea de mucho más alta definición.
+
+-Redibujado inmediato
+--Cambio de una propiedad redibuja inmediatamente
+--Cascada de llamadas hasta PanelPrincipal
+
+-Implementar bien para que margen> 0 funcione
+
+-Color: transparencia

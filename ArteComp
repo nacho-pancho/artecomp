@@ -1,0 +1,15 @@
+#!/bin/bash
+CLASSPATH=`pwd`"/classes"
+for i in `find lib/ -maxdepth 1 -name '*.jar'`
+do
+CLASSPATH=$CLASSPATH:`pwd`/$i
+done
+export CLASSPATH
+echo "CLASSPATH=$CLASSPATH"
+#javac  `find artecomp -name '*.java'`
+PROG=$1
+if [[ -z $PROG ]]
+then
+  PROG=artecomp.ui.ArteComp
+fi
+java -Xmx512M -Xms128M $PROG
